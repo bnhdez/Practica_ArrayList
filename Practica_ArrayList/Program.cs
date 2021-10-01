@@ -27,7 +27,7 @@ namespace Practica_ArrayList
 
                     nota = float.Parse(Console.ReadLine());
                 }
-                //conteo de elementos
+                //conteo de elementos en matriz
                 int nelementos = Notas2.Count; //Numero de elementos en la matriz
                 int nalumnos = nelementos; //Numero de alumnos
 
@@ -38,11 +38,9 @@ namespace Practica_ArrayList
                 if (decision == "si")
                 {
                     nalumnos = nalumnos + 1;
-                    //posicion de la matriz
+                    //posicion de la matriz en la que se agregara la nueva nota media
                     int nalumni = nelementos;
-                    //nueva variable ya que la matriz empieca desde 0 y automaticamente agregara uno en la posicion
-                    int pos = nalumni - 1;
-                    Console.WriteLine("Introducir nueva nota media");
+                    Console.WriteLine("Introducir nueva nota media para alumno numero {0,3:D}", i);
                     float nota2 = float.Parse(Console.ReadLine());
                     Notas2.Insert(nalumni, nota2);
                 }
@@ -72,19 +70,30 @@ namespace Practica_ArrayList
                 }
 
                 //Obtener el valor de un elemento
-                float x = (float)Notas2[0];
-                float y = (float)Notas2[1];
-                float z = (float)Notas2[2];
-                Console.WriteLine(x);
-                Console.WriteLine(y);
-                Console.WriteLine(z);
+                Console.WriteLine("Si desea obtener el valor de una de la notas medias ya ingresadas, ingrese 'si', caso contrario ingrese 'no'");
+                string condicion2 = Console.ReadLine();
+
+                if (condicion2 == "si")
+                {
+                    Console.WriteLine("Introducir alumno al cual desea buscar la nota");
+                    //posicion de la matriz
+                    int busq = int.Parse(Console.ReadLine());
+                    //nueva variable ya que la matriz empieca desde 0 y automaticamente agregara uno en la posicion
+                    int ind = busq - 1;
+                    //obtiene elemento
+                    float found = (float)Notas2[ind];
+                    //Muestra nota obtenida
+                    Console.WriteLine("Para el alumno " + busq + " se ingreso la nota media de: " + found);
+                }
+                else if (condicion2 == "no")
+                {
+                    Console.WriteLine();
+                }
 
                 //Sumar las notas
                 float suma = 0;
                 foreach (float notaMedia in Notas2)
                     suma += notaMedia;
-
-
                 //Escribir los resultados
                 Console.WriteLine("El PROMEDIO ES " + suma / nalumnos);
             }
