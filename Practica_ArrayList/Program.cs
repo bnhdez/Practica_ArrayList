@@ -27,16 +27,19 @@ namespace Practica_ArrayList
 
                     nota = float.Parse(Console.ReadLine());
                 }
-                int nalumnos = Notas2.Count; //Numero de alumnos
+                //conteo de elementos
+                int nelementos = Notas2.Count; //Numero de elementos en la matriz
+                int nalumnos = nelementos; //Numero de alumnos
 
                 //Insertar un elemento
-                Console.WriteLine("Si desea agregar una nota media adicional, ingrese 'si', caso contrario ingrese 'no'");
+                Console.WriteLine("Si desea insertar una nota media adicional, ingrese 'si', caso contrario ingrese 'no'");
                 string decision = Console.ReadLine();
 
                 if (decision == "si")
                 {
+                    nalumnos = nalumnos + 1;
                     //posicion de la matriz
-                    int nalumni = nalumnos - 1;
+                    int nalumni = nelementos;
                     //nueva variable ya que la matriz empieca desde 0 y automaticamente agregara uno en la posicion
                     int pos = nalumni - 1;
                     Console.WriteLine("Introducir nueva nota media");
@@ -67,6 +70,14 @@ namespace Practica_ArrayList
                 {
                     Console.WriteLine();
                 }
+
+                //Obtener el valor de un elemento
+                float x = (float)Notas2[0];
+                float y = (float)Notas2[1];
+                float z = (float)Notas2[2];
+                Console.WriteLine(x);
+                Console.WriteLine(y);
+                Console.WriteLine(z);
 
                 //Sumar las notas
                 float suma = 0;
