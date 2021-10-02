@@ -90,12 +90,33 @@ namespace Practica_ArrayList
                     Console.WriteLine();
                 }
 
+                //Eliminar un elemento
+                Console.WriteLine("Si desea eliminar una de la notas medias ya ingresadas, ingrese 'si', caso contrario ingrese 'no'");
+                string condicion3 = Console.ReadLine();
+
+                if (condicion3 == "si")
+                {
+                    nalumnos = nalumnos - 1;
+                    Console.WriteLine("Introducir alumno a modificar");
+                    //posicion de la matriz
+                    int elimin = int.Parse(Console.ReadLine());
+                    //nueva variable ya que la matriz empieca desde 0 y automaticamente agregara uno en la posicion
+                    int index = elimin - 1;
+                    //elimina la nota
+                    Notas2.RemoveAt(index);
+                }
+                else if (condicion3 == "no")
+                {
+                    Console.WriteLine();
+                }
+
                 //Sumar las notas
                 float suma = 0;
                 foreach (float notaMedia in Notas2)
                     suma += notaMedia;
                 //Escribir los resultados
-                Console.WriteLine("El PROMEDIO ES " + suma / nalumnos);
+                Console.WriteLine();
+                Console.WriteLine("El PROMEDIO FINAL ES DE: " + suma / nalumnos);
             }
         
         }
