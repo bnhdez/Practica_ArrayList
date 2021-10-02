@@ -110,6 +110,29 @@ namespace Practica_ArrayList
                     Console.WriteLine();
                 }
 
+                //Buscar elementos
+                Console.WriteLine("Si desea la nota de un alumno en especifico ingrese 'si', caso contrario ingrese 'no'");
+                string condicion4 = Console.ReadLine();
+
+                if (condicion3 == "si")
+                {
+                    Console.WriteLine("Ingrese la nota a buscar ");
+                    float n_busqueda = float.Parse(Console.ReadLine());
+                    if (Notas2.Contains(n_busqueda))
+                    {
+                        float Index_nota = Notas2.IndexOf(n_busqueda);
+                        Console.WriteLine("La nota media de " + n_busqueda + "la obtuvo el alumno " + Index_nota);
+                    }
+                    else
+                    {
+                        Console.WriteLine("No existe la nota media que ingreso");
+                    }
+                }
+                else if (condicion4 == "no")
+                {
+                    Console.WriteLine();
+                }
+
                 //Sumar las notas
                 float suma = 0;
                 foreach (float notaMedia in Notas2)
